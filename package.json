@@ -2,11 +2,6 @@
   "name": "movie-app",
   "version": "0.1.0",
   "private": true,
-  "main": "server.js",
-  "engines": {
-    "npm": "8.15.0",
-    "node": "18.7.0"
-  },
   "homepage": "http://olamide-bello.github.io/movie-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
