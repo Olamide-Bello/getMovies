@@ -13,9 +13,10 @@ function FooterComponent() {
                 <FontAwesomeIcon icon={faTiktok} size= "2x"/>
 
             </div>
-            <div><p>Copyright &copy; 2022 EdgeLedger</p></div>
+            <div><p>Copyright &copy; 2022 getMovies</p></div>
         </footer>
     )
 }
+
 
 export default FooterComponent
