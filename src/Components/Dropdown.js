@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import Container from 'react-bootstrap/esm/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Offcanvas from 'react-bootstrap/Offcanvas';
 import {NavLink} from "react-router-dom";
 import '../App.css'
 import { GlobalContext } from './GlobalContext';
