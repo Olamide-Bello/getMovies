@@ -22,7 +22,7 @@ function SimilarMovies({similarMovies, media_type}) {
                                 similarMovies.map((movie) => (
 
                                     <div key={movie.id} className={matches? "movie":"movie-mobile"} >
-                                        <Link to={`/details/${movie.id}/${movie.media_type}`} onClick={handleDetails}>
+                                        <Link to={`/details/${movie.id}/${movie.release_date?"movie":"tv"}`} onClick={handleDetails}>
                                             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>
                                                 <p className="title">{movie.title || movie.name}</p>

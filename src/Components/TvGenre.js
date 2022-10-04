@@ -16,7 +16,6 @@ function TvGenre() {
             const result = await response.json()
             if (result) {
                 console.log(result.results)
-                console.log(genre)
                 setGenreMovies(result.results)
             }
         })
