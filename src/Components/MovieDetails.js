@@ -62,7 +62,7 @@ function MovieDetails() {
             if (result && media_type=== "movie") {
                 setSimilarMovies(result.results)
             }
-            if (result.success === false){
+            if (result.success === false && media_type=== "movie"){
                 setSimilarMovies([])
             }
         })
@@ -72,10 +72,10 @@ function MovieDetails() {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/tv/${id}/similar?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&language=en-US&page=1`)
             const result = await response.json()
-            if (result  && media_type=== "tv") {
+            if (result && media_type=== "tv") {
                 setSimilarMovies(result.results)
             }
-            if (result.success === false){
+            if (result.success === false && media_type=== "tv"){
                 setSimilarMovies([])
             }
             
@@ -89,7 +89,7 @@ function MovieDetails() {
             if (result && media_type=== "movie") {
                 setRecommendedMovies(result.results)
             }
-            if (result.success === false){
+            if (result.success === false && media_type=== "movie"){
                 setRecommendedMovies([])
             }
 
@@ -104,7 +104,7 @@ function MovieDetails() {
             if (result && media_type=== "tv") {
                 setRecommendedMovies(result.results)
             }
-            if (result.success === false){
+            if (result.success === false && media_type=== "tv"){
                 setRecommendedMovies([])
             }
 
