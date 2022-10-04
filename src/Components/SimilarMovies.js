@@ -7,7 +7,7 @@ import moment from "moment/moment";
 import '../App.css'
 
 function SimilarMovies({similarMovies, media_type}) {
-    const { handleDetails } = useContext(GlobalContext)
+    const { handleDetails, matches } = useContext(GlobalContext)
 
     return (
         <div>
@@ -21,7 +21,7 @@ function SimilarMovies({similarMovies, media_type}) {
                             similarMovies && similarMovies.length > 0 ?
                                 similarMovies.map((movie) => (
 
-                                    <div key={movie.id} className="movie" >
+                                    <div key={movie.id} className={matches? "movie":"movie-mobile"} >
                                         <Link to={`/details/${movie.id}/${movie.media_type}`} onClick={handleDetails}>
                                             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>

@@ -8,9 +8,11 @@ function TvGenrePage() {
 
     return (
         <Container id='home' fluid className="App">
-            <Header/>
-            <TvGenre/>
-            <FooterComponent/>
+            <div className='content'>
+                <Header />
+                <TvGenre />
+            </div>
+            <FooterComponent />
         </Container>
     )
 }

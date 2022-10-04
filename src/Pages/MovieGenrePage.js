@@ -8,9 +8,11 @@ function MovieGenrePage() {
 
     return (
         <Container id='home' fluid className="App">
-            <Header/>
-            <Genre />
-            <FooterComponent/>
+            <div className='content'>
+                <Header />
+                <Genre />
+            </div>
+            <FooterComponent />
         </Container>
     )
 }

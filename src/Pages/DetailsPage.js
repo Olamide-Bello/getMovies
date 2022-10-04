@@ -9,9 +9,11 @@ function DetailsPage() {
 
     return (
         <Container id='home' fluid className="App">
-            <Header/>
-            <MovieDetails/>
-            <FooterComponent/>
+            <div className='content'>
+                <Header />
+                <MovieDetails />
+            </div>
+            <FooterComponent />
         </Container>
     )
 }

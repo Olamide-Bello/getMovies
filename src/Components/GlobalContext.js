@@ -13,6 +13,7 @@ export const GlobalContext = createContext({
     genreType: "",
     MovieId: "",
     genreMovies: [],
+    matches: window.matchMedia("(min-width: 768px)").matches
 
 })
 function GlobalState({ children }) {
@@ -24,6 +25,10 @@ function GlobalState({ children }) {
     const [genreType, setGenreType] = useState("")
     const [upComingMovies, setUpcomingMovies] = useState([])
     const [movieId, setMovieId] = useState("")
+    const [matches, setMatches] = useState(
+        window.matchMedia("(min-width: 768px)").matches
+    )
+
   
     const handleChange = (e) => {
         setSearchParam(e.target.value)
@@ -80,6 +85,11 @@ function GlobalState({ children }) {
             ()
 
     }, [searchParam])
+    useEffect(() => {
+        window
+            .matchMedia("(min-width: 768px)")
+            .addEventListener('change', e => setMatches(e.matches));
+    }, []);
 
 
     const contextValue = {
@@ -94,6 +104,7 @@ function GlobalState({ children }) {
         upComingMovies,
         genreType,
         movieId,
+        matches,
     }
     return (
         <GlobalContext.Provider value={contextValue}>

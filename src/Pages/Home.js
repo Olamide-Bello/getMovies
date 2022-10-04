@@ -10,20 +10,22 @@ import FooterComponent from '../Components/Footer';
 import UpcomingMovies from '../Components/UpcomingMovies';
 
 function Home() {
-    const { movieList } = useContext(GlobalContext)
+  const { movieList } = useContext(GlobalContext)
   return (
     <Container id='home' fluid className="App">
-      <Header />
-      <Search />
-      {movieList ? <MovieList />
-        :
-        <>
-          <TrendingMovies />
-          <UpcomingMovies/>
-          <TrendingSeries />
-        </>
-      }
-      <FooterComponent/>
+      <div className='content'>
+        <Header />
+        <Search />
+        {movieList ? <MovieList />
+          :
+          <>
+            <TrendingMovies />
+            <UpcomingMovies />
+            <TrendingSeries />
+          </>
+        }
+      </div>
+      <FooterComponent />
     </Container>
   );
 }

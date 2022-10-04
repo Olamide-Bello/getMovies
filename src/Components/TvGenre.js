@@ -8,7 +8,7 @@ import moment from "moment/moment";
 
 function TvGenre() {
     const { genre } = useParams()
-    const { genreType } = useContext(GlobalContext)
+    const { genreType, matches } = useContext(GlobalContext)
     const [genreMovies, setGenreMovies] = useState([])
     useEffect(() => {
         (async () => {
@@ -35,7 +35,7 @@ function TvGenre() {
                         {
                             genreMovies && genreMovies.length > 0 ?
                                 genreMovies.map((movie) => (
-                                    <div key={movie.id} className="movie">
+                                    <div key={movie.id} className={matches? "movie":"movie-mobile"}>
                                         <Link to={`/details/${movie.id}/tv`}>
                                             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>

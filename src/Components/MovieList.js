@@ -7,7 +7,7 @@ import moment from "moment/moment";
 import '../App.css'
 
 function MovieList() {
-    const { loading, movieList, handleDetails } = useContext(GlobalContext)
+    const { loading, movieList, handleDetails, matches } = useContext(GlobalContext)
     return (
         <div>
             {loading ?
@@ -21,7 +21,7 @@ function MovieList() {
                             {
                                 movieList && movieList.length > 0 ?
                                     movieList.map((movie) => (
-                                        <div key={movie.imdbID} className="movie">
+                                        <div key={movie.imdbID} className={matches? "movie":"movie-mobile"}>
                                             <Link to={`/details/${movie.id}/${movie.media_type}`} onClick={handleDetails}>
                                             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>

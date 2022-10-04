@@ -1,31 +1,38 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import Container from "react-bootstrap/esm/Container";
 import YouTube from "react-youtube";
 import moment from "moment/moment";
 import SimilarMovies from "./SimilarMovies";
 import RecommendedMovies from "./RecommendedMovies";
+import { GlobalContext } from "./GlobalContext";
+
 
 
 function MovieDetails() {
-    
+    const { matches } = useContext(GlobalContext)
     const { id, media_type } = useParams()
     const [similarMovies, setSimilarMovies] = useState([])
     const [recommendedMovies, setRecommendedMovies] = useState([])
     const [movieDetails, setMovieDetails] = useState([])
     const [tvDetails, setTvDetails] = useState([])
-    const [trailerKey, setTrailerKey] = useState("")
+    const [tvTrailerKey, setTvTrailerKey] = useState("")
+    const [movieTrailerKey, setMovieTrailerKey] = useState("")
 
-    const opts = {
-        height: 486,
-        width: 864
-    }
+ 
     useEffect(() => {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&append_to_response=videos`)
             const result = await response.json()
             if (result.id) {
                 setMovieDetails([result])
+            }
+            if (result.videos) {
+                const officialTrailer = result.videos.results.find(
+                    video => video.name.includes("Official Trailer") || video.name.includes("Trailer")
+                )
+                setMovieTrailerKey(officialTrailer.key)
+
             }
             
         })
@@ -38,40 +45,18 @@ function MovieDetails() {
             if (result.id ) {
                 setTvDetails([result])
             }
+            if (result.videos) {
+                const officialTrailer = result.videos.results.find(
+                    video => video.name.includes("Official Trailer") || video.name.includes("Trailer")
+                )
+                setTvTrailerKey(officialTrailer.key)
+
+            }
             
         })
         ()
     }, [id])
 
-    useEffect(() => {
-        (async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=9fd66d9e18c945f965d9d1a26f32c9a1`)
-            const result = await response.json()
-            if (result.results) {
-                const officialTrailer = result.results.find(
-                    video => video.name.includes("Official Trailer") || video.name.includes("Trailer")
-                )
-                setTrailerKey(officialTrailer.key)
-
-            }
-
-        })
-            ()
-    }, [id, trailerKey])
-    useEffect(() => {
-        (async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=9fd66d9e18c945f965d9d1a26f32c9a1`)
-            const result = await response.json()
-            if (result.results) {
-                const officialTrailer = result.results.find(video =>
-                    video.name.includes("Official Trailer") || video.name.includes("Trailer")
-                )
-                setTrailerKey(officialTrailer.key)
-            }
-
-        })
-            ()
-    }, [id])
     useEffect(() => {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&language=en-US&page=1`)
@@ -158,7 +143,7 @@ function MovieDetails() {
                             </Container>
                         </div>
                         <div className="iframe">
-                            <YouTube videoId={trailerKey} opts={opts} />
+                            <YouTube videoId={tvTrailerKey} iframeClassName={matches? "frame":"frame-mobile"} />
                         </div>
                     </div>)
                 )}
@@ -183,7 +168,7 @@ function MovieDetails() {
                             </Container>
                         </div>
                         <div className="iframe">
-                            <YouTube videoId={trailerKey} opts={opts} />
+                            <YouTube videoId={movieTrailerKey} iframeClassName={matches? "frame":"frame-mobile"} />
                         </div>
                     </div>)
                 )}
