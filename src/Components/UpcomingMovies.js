@@ -8,7 +8,6 @@ import '../App.css'
 
 function UpcomingMovies() {
     const { upComingMovies, handleDetails } = useContext(GlobalContext)
-    console.log(upComingMovies)
     return (
         <div>
             {upComingMovies === undefined ?

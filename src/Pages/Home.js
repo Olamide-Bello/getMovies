@@ -13,7 +13,6 @@ function Home() {
   const { movieList } = useContext(GlobalContext)
   return (
     <Container id='home' fluid className="App">
-      <div className='content'>
         <Header />
         <Search />
         {movieList ? <MovieList />
@@ -24,7 +23,6 @@ function Home() {
             <TrendingSeries />
           </>
         }
-      </div>
       <FooterComponent />
     </Container>
   );

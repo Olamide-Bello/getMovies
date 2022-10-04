@@ -7,8 +7,6 @@ import SimilarMovies from "./SimilarMovies";
 import RecommendedMovies from "./RecommendedMovies";
 import { GlobalContext } from "./GlobalContext";
 
-
-
 function MovieDetails() {
     const { matches } = useContext(GlobalContext)
     const { id, media_type } = useParams()
@@ -84,7 +82,6 @@ function MovieDetails() {
         })
         ()
     }, [id])
-    console.log(similarMovies)
     useEffect(() => {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&language=en-US&page=1`)
@@ -115,11 +112,6 @@ function MovieDetails() {
         })
         ()
     }, [id])
-    console.log(recommendedMovies)
-
-
-
-
 
     return (
         <div>

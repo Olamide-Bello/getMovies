@@ -3,7 +3,6 @@ import Header from "../Components/Header"
 import Container from "react-bootstrap/esm/Container"
 import TvGenre from "../Components/TvGenre"
 
-
 function TvGenrePage() {
 
     return (

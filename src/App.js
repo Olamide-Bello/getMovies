@@ -4,7 +4,6 @@ import MovieGenrePage from './Pages/MovieGenrePage';
 import DetailsPage from "./Pages/DetailsPage";
 import TvGenrePage from "./Pages/TvGenrePage";
 
-
 function App() {
   return (
     <BrowserRouter>

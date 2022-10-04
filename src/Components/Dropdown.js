@@ -10,15 +10,6 @@ const toggleMenu = ({ isOpen }) => {
 };
 function Dropdown() {
     const { handleGenre, matches } = useContext(GlobalContext)
-    // const [matches, setMatches] = useState(
-    //     window.matchMedia("(min-width: 768px)").matches
-    // )
-
-    // useEffect(() => {
-    //     window
-    //         .matchMedia("(min-width: 768px)")
-    //         .addEventListener('change', e => setMatches(e.matches));
-    // }, []);
     return (
         <>
 

@@ -4,7 +4,6 @@ import Header from "../Components/Header"
 import Container from "react-bootstrap/esm/Container"
 import MovieDetails from "../Components/MovieDetails"
 
-
 function DetailsPage() {
 
     return (

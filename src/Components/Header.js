@@ -7,7 +7,6 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import '../App.css'
 import Dropdown from "./Dropdown";
 
-
 function Header() {
 
     return (
