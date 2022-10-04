@@ -39,7 +39,6 @@ function Dropdown() {
                         <NavDropdown.Item as={NavLink} to={`/tv/80`} onClick={handleGenre} name="crime" className='dropdown'>Crime</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/tv/99`} onClick={handleGenre} name="documentary" className='dropdown'>Documentary</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/tv/10751`} onClick={handleGenre} name="family" className='dropdown'>Family</NavDropdown.Item>
-                        <NavDropdown.Item as={NavLink} to={`/tv/27`} onClick={handleGenre} name="horror" className='dropdown'>Horror</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/tv/10762`} onClick={handleGenre} name="kids" className='dropdown'>Kids</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/tv/10402`} onClick={handleGenre} name="musical" className='dropdown'>Musical</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to={`/tv/9648`} onClick={handleGenre} name="mystery" className='dropdown'>Mystery</NavDropdown.Item>
@@ -96,7 +95,6 @@ function Dropdown() {
                             <NavDropdown.Item as={NavLink} to={`/tv/80`} onClick={handleGenre} name="crime" className='dropdown'>Crime</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to={`/tv/99`} onClick={handleGenre} name="documentary" className='dropdown'>Documentary</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to={`/tv/10751`} onClick={handleGenre} name="family" className='dropdown'>Family</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to={`/tv/27`} onClick={handleGenre} name="horror" className='dropdown'>Horror</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to={`/tv/10762`} onClick={handleGenre} name="kids" className='dropdown'>Kids</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to={`/tv/10402`} onClick={handleGenre} name="musical" className='dropdown'>Musical</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to={`/tv/9648`} onClick={handleGenre} name="mystery" className='dropdown'>Mystery</NavDropdown.Item>
