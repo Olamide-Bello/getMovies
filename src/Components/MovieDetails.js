@@ -86,7 +86,7 @@ function MovieDetails() {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&language=en-US&page=1`)
             const result = await response.json()
-            if (result) {
+            if (result && media_type=== "movie") {
                 setRecommendedMovies(result.results)
             }
             if (result.success === false){
@@ -101,7 +101,7 @@ function MovieDetails() {
         (async () => {
             const response = await fetch(`https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=9fd66d9e18c945f965d9d1a26f32c9a1&language=en-US&page=1`)
             const result = await response.json()
-            if (result) {
+            if (result && media_type=== "tv") {
                 setRecommendedMovies(result.results)
             }
             if (result.success === false){
