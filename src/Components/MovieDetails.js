@@ -174,31 +174,6 @@ function MovieDetails() {
                 )}
             </>
             }
-            {media_type === undefined
-            &&
-            <>
-                {movieDetails.length > 0 && movieDetails.map((movie) => (
-                    <div key={movie.id}>
-                        <div className="poster-background" style={{ background: `url(https://image.tmdb.org/t/p/w200${movie.poster_path}) no-repeat center center/cover` }}>
-                            <img className="poster" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Movie Poster" />
-                        </div>
-                        <div>
-                            <Container>
-                                <h2 className="title">{movie.title || movie.name}</h2>
-                                <p>{movie.overview}</p>
-                                <p><span><strong>Genre:</strong></span> {movie.genres.map((each, index) => {return <span key={index}>{index ? ', ' : ''}{each.name}</span> })}</p>
-                                <p><strong>Release Date:</strong> <span className="date">{moment(movie.release_date || movie.first_air_date).format("MMMM Do YYYY")}</span></p>
-                                <p><strong>Language:</strong> {movie.spoken_languages.map((language, index) => <span key={index}>{index ? ', ' : ''}{language.name}</span>)}</p>
-                                <p><strong>Rating:</strong> {movie.vote_average}</p>
-                            </Container>
-                        </div>
-                        <div className="iframe">
-                            <YouTube videoId={movieTrailerKey} iframeClassName={matches? "frame":"frame-mobile"} />
-                        </div>
-                    </div>)
-                )}
-            </>
-            }
             <SimilarMovies similarMovies={similarMovies} media_type= {media_type}/>
             <RecommendedMovies recommendedMovies={recommendedMovies} />
 
