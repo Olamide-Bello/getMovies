@@ -15,7 +15,7 @@ function Home() {
     <Container id='home' fluid className="App">
         <Header />
         <Search />
-        {movieList ? <MovieList />
+        {movieList.length > 0 ? <MovieList />
           :
           <>
             <TrendingMovies />
