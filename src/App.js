@@ -7,17 +7,17 @@ import TvGenrePage from "./Pages/TvGenrePage";
 function App() {
   return (
     <BrowserRouter>
-        <Routes>
-          <Route path="/" element= {<Home/>}/>
-          <Route path="/movie/:genre" element= {<MovieGenrePage/>}/>
-          <Route path="/tv/:genre" element= {<TvGenrePage/>}/>
-          <Route path="/home" element= {<Home/>}/>
-          <Route path="/details/:id/:media_type" element= {<DetailsPage/>}/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:genre" element={<MovieGenrePage />} />
+        <Route path="/tv/:genre" element={<TvGenrePage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/details/:id/:media_type" element={<DetailsPage />} />
 
-          <Route path="*" element= {<Navigate to='/'/>}/>
+        <Route path="*" element={<Navigate to='/' />} />
 
-        </Routes>
-      </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

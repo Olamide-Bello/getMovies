@@ -34,7 +34,7 @@ function TvGenre() {
                                 genreMovies.map((movie) => (
                                     <div key={movie.id} className={matches? "movie":"movie-mobile"}>
                                         <Link to={`/details/${movie.id}/tv`}>
-                                            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
+                                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>
                                                 <p className="title">{movie.name}</p>
                                                 <p>First air date: <span className="date">{moment(movie.first_air_date).format("MMM Do YYYY")}</span></p>

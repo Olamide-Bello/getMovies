@@ -120,7 +120,7 @@ function MovieDetails() {
             <>
                 {tvDetails.length>0 && tvDetails.map((movie) => (
                     <div key={movie.id}>
-                        <div className="poster-background" style={{ background: `url(https://image.tmdb.org/t/p/w200${movie.poster_path}) no-repeat center center/cover` }}>
+                        <div className="poster-background" style={{ background: `url(https://image.tmdb.org/t/p/original${movie.poster_path}) no-repeat center center/cover` }}>
                             <img className="poster" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Movie Poster" />
                         </div>
                         <div>

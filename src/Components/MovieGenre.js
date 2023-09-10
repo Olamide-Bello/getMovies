@@ -34,7 +34,7 @@ function MovieGenre() {
                                 genreMovies.map((movie) => (
                                     <div key={movie.id} className={matches? "movie":"movie-mobile"}>
                                         <Link to={`/details/${movie.id}/movie`}>
-                                            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="Movie Poster" />
+                                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="Movie Poster" />
                                             <Container>
                                                 <p className="title">{movie.title}</p>
                                                 <p>Release date: <span className="date">{moment(movie.release_date).format("MMM Do YYYY")}</span></p>
